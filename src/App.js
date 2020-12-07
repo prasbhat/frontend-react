@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import TodoTrackerApp from './component/TodoTrackerApp';
+import TodoApplication from './todo-application/component/TodoApplication';
 
 function App() {
   return (
     <div className="container">
-        <TodoTrackerApp />
+        <h1 align="center">Todo Tracker Application</h1>
+        <TodoApplication />
       </div>
   );
 }
