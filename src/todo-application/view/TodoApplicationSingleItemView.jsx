@@ -12,9 +12,6 @@ const TodoApplicationSingleItemView = (component) => {
             <table className='table-striped' border='1'> 
                 <tbody>                 
                     <tr>
-                        <th>Id</th>
-                        <td> {todoItem.id} </td>
-                    </tr><tr>
                         <th>Title</th>
                         <td> {
                             action === 'view' ? todoItem.title : <input type='text' name='title' value= {todoItem.title} onChange={handleChange} size="47"></input>

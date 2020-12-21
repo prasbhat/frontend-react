@@ -7,7 +7,6 @@ const TodoApplicationView = (component) => {
             <table className='table-striped' border='1'>
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th>Title</th>
                         <th>Description</th>
                         <th>Due Date</th>
@@ -20,7 +19,6 @@ const TodoApplicationView = (component) => {
                 <tbody>
                     { component.state.todoList.map(todoItem =>
                         <tr key={todoItem.id}>
-                            <td>{todoItem.id}</td>
                             <td>{todoItem.title}</td>
                             <td>{todoItem.description}</td>
                             <td>{todoItem.dueDate}</td>
