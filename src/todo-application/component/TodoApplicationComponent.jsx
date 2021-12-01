@@ -6,7 +6,7 @@ import TodoApplicationSingleItemView from '../view/TodoApplicationSingleItemView
 
 class TodoApplicationComponent extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             todoList: [],
             todoItem: {
@@ -20,10 +20,6 @@ class TodoApplicationComponent extends Component {
             action: ''
         }
 
-        this.view = this.view.bind(this)
-        this.edit = this.edit.bind(this)
-        this.create = this.create.bind(this)
-        
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -53,11 +49,7 @@ class TodoApplicationComponent extends Component {
             }
         )
     }
-    retrieveTodoItemClicked(id) {
-        console.log('view= ' + id)
-        this.props.history.push(`/todo/view/${id}`)
-    }
-
+    
     view(todoItem) {
         console.log('view= ' + JSON.stringify(todoItem))
         this.action='view';
@@ -99,6 +91,7 @@ class TodoApplicationComponent extends Component {
       }
 
     handleSubmit(todoItem) {
+        todoItem.preventDefault()
         console.log('submit= ' + JSON.stringify(todoItem))
         
         if(todoItem.id === -1) TodoService.create(todoItem)

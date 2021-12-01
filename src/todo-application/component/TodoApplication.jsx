@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
-import TodoApplicationRouter from '../view/TodoApplicationRouter';
+import TodoApplicationComponent from './TodoApplicationComponent';
 
 class TodoApplication extends Component {
     render() {
         return (
-            <TodoApplicationRouter />
+            <div align='center'>
+                <TodoApplicationComponent />
+            </div>
+            
         )
     }
 }
