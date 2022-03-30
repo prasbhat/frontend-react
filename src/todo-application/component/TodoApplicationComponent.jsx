@@ -13,15 +13,27 @@ class TodoApplicationComponent extends Component {
                 id: '',
                 title: '',
                 description:'',
+                creationDate:'',
                 dueDate:'',
-                status:''
+                status:'',
+                todoCommentsSet:[]
+            },
+            todoTaskComments: {
+                taskComments: ''
             },
             statusList:[],
-            action: ''
+            action: '',
+            showCommentTable: false
         }
 
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    toggleComments(){
+        this.setState({
+            showCommentTable: !this.state.showCommentTable
+        })
     }
 
     componentDidMount() {
@@ -59,14 +71,15 @@ class TodoApplicationComponent extends Component {
     edit(todoItem) {
         console.log('edit= ' + JSON.stringify(todoItem))
         this.action='edit';
-        this.setState( { todoItem : todoItem });
+        this.setState( { todoItem : todoItem, todoTaskComments: {taskComments:''} });
     }
 
     create(id) {
         console.log('create')
         this.action='edit';
          this.setState( { todoItem: 
-            { id: id, title: '', description:'', dueDate:'', status:'' } 
+            { id: id, title: '', description:'', dueDate:'', status:'' } ,
+            todoTaskComments: {taskComments:''}
         });
     }    
 
@@ -88,16 +101,19 @@ class TodoApplicationComponent extends Component {
         this.setState( prevState => ({ todoItem : 
             {...prevState.todoItem, [name]: value }
         })) 
+        this.setState( prevState => ({ todoTaskComments : 
+            {...prevState.todoTaskComments, [name]: value }
+        })) 
       }
 
-    handleSubmit(todoItem) {
-        todoItem.preventDefault()
-        console.log('submit= ' + JSON.stringify(todoItem))
+    handleSubmit(todoItem, todoTaskComments) {
+        console.log('submit= ' + JSON.stringify(todoItem) +' && '+JSON.stringify(todoTaskComments));
         
-        if(todoItem.id === -1) TodoService.create(todoItem)
-        else TodoService.update(todoItem)
-        .then(() => this.props.history.push(`/todo/`)
-        )        
+        var todoTaskCommentsArray= [];
+        todoTaskCommentsArray.push(todoTaskComments);
+        todoItem.todoTaskCommentsSet=todoTaskCommentsArray;
+        TodoService.create(todoItem);   
+        this.retrieveAllTodoList();   
     }
 
     render() {

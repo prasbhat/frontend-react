@@ -14,8 +14,16 @@ class TodoService {
         return axios.put(`${TODO_API_URL}/update`, todoItem)
     }
     
-    create(todoItem) {
-        return axios.post(`${TODO_API_URL}/create`, todoItem)
+    create(todoItem) {        
+        axios({
+            method: 'post',
+            url: `${TODO_API_URL}/create`,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: todoItem
+        });
+        // return axios.post(`${TODO_API_URL}/create`, todoItem)
     }
 
     retrieveTodoStatus() {
