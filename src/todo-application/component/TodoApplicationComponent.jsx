@@ -10,7 +10,7 @@ class TodoApplicationComponent extends Component {
         this.state = {
             todoList: [],
             todoItem: {
-                id: '',
+                systemTasksId: '',
                 title: '',
                 description:'',
                 creationDate:'',
@@ -78,7 +78,7 @@ class TodoApplicationComponent extends Component {
         console.log('create')
         this.action='edit';
          this.setState( { todoItem: 
-            { id: id, title: '', description:'', dueDate:'', status:'' } ,
+            { systemTasksId: id, title: '', description:'', dueDate:'', status:'' } ,
             todoTaskComments: {taskComments:''}
         });
     }    
@@ -117,7 +117,7 @@ class TodoApplicationComponent extends Component {
     }
 
     render() {
-        if(this.state.todoItem.id === '') {
+        if(this.state.todoItem.systemTasksId === '') {
             return (
                 TodoApplicationView (this)
             )

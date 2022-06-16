@@ -24,7 +24,7 @@ const TodoApplicationSingleItemView = (component) => {
                             action === 'view' ? todoItem.description : <textarea name='description' value= {todoItem.description} onChange={handleChange} rows="3" cols="37"></textarea>
                         } </td>
                     </tr>
-                    {todoItem.id > 0 &&
+                    {todoItem.systemTasksId > 0 &&
                     <tr>
                         <th>Creation Date</th>
                         <td> { Moment(todoItem.creationDate).format('DD-MMM-YYYY') } </td>
@@ -44,7 +44,7 @@ const TodoApplicationSingleItemView = (component) => {
                             </select>
                         } </td>
                     </tr>
-                    {todoItem.id > 0 &&
+                    {todoItem.systemTasksId > 0 &&
                     <tr>                    
                         <th>Comments</th>
                         <td>

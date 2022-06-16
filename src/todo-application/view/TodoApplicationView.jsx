@@ -28,7 +28,7 @@ const TodoApplicationView = (component) => {
                             <td align='center'>{todoItem.todoTaskCommentsSet.length}</td>
                             <td><button className="btn btn-success" onClick={() => component.view(todoItem)}>View</button></td>
                             <td><button className="btn btn-success" onClick={() => component.edit(todoItem)}>Edit</button></td>
-                            <td><button className="btn btn-warning" onClick={() => component.delete(todoItem.id)}>Delete</button></td>
+                            <td><button className="btn btn-warning" onClick={() => component.delete(todoItem.systemTasksId)}>Delete</button></td>
                         </tr>
                     )}
                 </tbody>

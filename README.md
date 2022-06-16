@@ -1,42 +1,22 @@
+# Frontend-React
+In this project, I will be developing a ***Model-View-Controller (MVC)*** application using **ReactJS Framework**, *which would consume the REST APIs exposed by* the **[Spring Boot Microservice](https://github.com/prasbhat/microservice-springboot-h2)** project created earlier.
+
+## Requirements
+- **Node.js v8+**
+- **[Visual Studio Code](https://aka.ms/win32-x64-user-stable)** - An IDE for developing the code. You can use any IDE of your choice, that supports *TypeScript*. I will be using the **Visual Studio Code**.
+
+Develop the frontend application using the **ReactJS Framework**, so that we can *consume the REST APIs, mentioned below, exposed by our microservice application*:
+| Description | CRUD Operation  | HTTP Method | REST API Endpoint |
+|:-----------:|:--------------:|:-----------:|:-----------------:|
+| Create New Todo Task | CREATE | POST | `/tasks` |
+| Fetch All Todo Tasks | READ | GET | `/tasks` |
+| Fetch One Todo Task | READ | GET | `/tasks/{id}` |
+| Update One Specific Todo Task | UPDATE | PUT | `/tasks` |
+| Delete One Specific Todo Task | DELETE | DELETE | `/tasks/{id}` |
+
+## Further help
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Read the [HELP.md](/HELP.md) for guide on using ReactJS Commands.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-To understand more details about this project, check [this](https://myzonesoft.com/2021/12/01/develop-mvc-application-using-spring-boot-react-js/) article
+More detailed documentation regarding this project can be found [here](https://myzonesoft.com/post/frontend-react/).
