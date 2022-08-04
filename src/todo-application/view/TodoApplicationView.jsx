@@ -4,7 +4,7 @@ import Moment from 'moment';
 const TodoApplicationView = (component) => {
     return (
         <div className="container">  
-            <button className="btn btn-success" onClick={() => component.create (-1)}>Create</button>
+            <button className="btn btn-success" onClick={() => component.create ()}>Create</button>
             <table className='table-striped' border='1' align="center">
                 <thead>
                     <tr>

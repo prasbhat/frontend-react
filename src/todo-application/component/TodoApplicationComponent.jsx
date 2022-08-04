@@ -74,11 +74,11 @@ class TodoApplicationComponent extends Component {
         this.setState( { todoItem : todoItem, todoTaskComments: {taskComments:''} });
     }
 
-    create(id) {
+    create() {
         console.log('create')
         this.action='edit';
          this.setState( { todoItem: 
-            { systemTasksId: id, title: '', description:'', dueDate:'', status:'' } ,
+            { title: '', description:'', dueDate:'', status:'' } ,
             todoTaskComments: {taskComments:''}
         });
     }    
